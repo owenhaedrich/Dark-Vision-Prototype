@@ -9,7 +9,7 @@ public class LightRaycast : MonoBehaviour
     [SerializeField] GameObject lightPoint;
     private bool withinRange = false;
     [SerializeField] private float distancePercent;
-    [SerializeField] private float lightPercent;
+    [SerializeField] public float lightPercent;
     LayerMask layerMask;
 
 
