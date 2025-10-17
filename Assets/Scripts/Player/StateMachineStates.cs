@@ -28,6 +28,12 @@ public class StateMachineStates : MonoBehaviour
 }
 public class EnterLightState : IState
 {
+    private StateMachineController controller;
+
+    public EnterLightState(StateMachineController stateMachineController)
+    {
+        this.controller = stateMachineController;
+    }
     public void EnterState()
     {
         Debug.Log("Entering Enter light State");
@@ -35,7 +41,7 @@ public class EnterLightState : IState
     }
     public void UpdateState()
     {
-        //needsRecovery = true;
+        controller.needsRecovery = true;
         //Entering Light effects
     }
     public void ExitState()
@@ -44,16 +50,25 @@ public class EnterLightState : IState
     }
 }
 public class ExitLightState: IState
-{   
+{
+    private StateMachineController controller;
+
+    public ExitLightState(StateMachineController stateMachineController)
+    {
+        this.controller = stateMachineController;
+    }
+
     public void EnterState()
     {
         Debug.Log("Entering exit light State");
     
     }
     public void UpdateState()
-    {    //if (needsRecovery)
-        //{ recovery effects
-        //needsRecovery = false;}
+    {   if (controller.needsRecovery)
+        { //recovery effects
+        controller.needsRecovery = false;
+        Debug.Log("Recovering");
+        }
     }
     public void ExitState()
     {
@@ -62,6 +77,12 @@ public class ExitLightState: IState
 }
 public class QuarterInState : IState
 {
+    private StateMachineController stateMachineController;
+
+    public QuarterInState(StateMachineController stateMachineController)
+    {
+        this.stateMachineController = stateMachineController;
+    }
     public void EnterState()
     {
         Debug.Log("Entering 25% light State");
@@ -78,6 +99,12 @@ public class QuarterInState : IState
 }
 public class HalfInState : IState
 {
+    private StateMachineController stateMachineController;
+
+    public HalfInState(StateMachineController stateMachineController)
+    {
+        this.stateMachineController = stateMachineController;
+    }
     public void EnterState()
     {
         Debug.Log("Entering 50% light State");
@@ -94,6 +121,12 @@ public class HalfInState : IState
 }
 public class ThreeQuarterInState : IState
 {
+    private StateMachineController stateMachineController;
+
+    public ThreeQuarterInState(StateMachineController stateMachineController)
+    {
+        this.stateMachineController = stateMachineController;
+    }
     public void EnterState()
     {
         Debug.Log("Entering 75% light State");
@@ -110,6 +143,12 @@ public class ThreeQuarterInState : IState
 }
 public class AllInState : IState
 {
+    private StateMachineController stateMachineController;
+
+    public AllInState(StateMachineController stateMachineController)
+    {
+        this.stateMachineController = stateMachineController;
+    }
     public void EnterState()
     {
         Debug.Log("Entering 100% light State");
