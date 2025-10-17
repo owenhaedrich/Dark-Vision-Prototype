@@ -7,7 +7,7 @@ public class LightCoverageManager : MonoBehaviour
 {
     LightRaycast[] lightSources;
     float[] lightPercentages;
-    float playerLightLevel;
+    public float playerLightLevel;
 
     int sources = 0;
 
