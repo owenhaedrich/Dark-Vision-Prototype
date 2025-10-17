@@ -44,7 +44,7 @@ public class EnterLightState : IState
     }
 }
 public class ExitLightState: IState
-{
+{   
     public void EnterState()
     {
         Debug.Log("Entering exit light State");
