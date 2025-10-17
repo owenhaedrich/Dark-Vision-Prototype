@@ -47,7 +47,7 @@ public class StateMachineController : MonoBehaviour
         if (lightLevel != null)
         {
             float lightPercent = lightLevel.playerLightLevel;
-            if (lightPercent <= 0)
+            if (lightPercent <= 3)
             {
                 changeState(new ExitLightState(this));
             }
