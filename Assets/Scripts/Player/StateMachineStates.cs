@@ -15,11 +15,7 @@ public class StateMachineStates : MonoBehaviour
     IState currentState;
 
     // Update is called once per frame
-    void Update()
-    {
-        currentState.UpdateState();
-    }
-    public void ChangeState(IState newstate)
+    public void changeState(IState newstate)
     {
         currentState.ExitState();
         currentState = newstate;

@@ -40,6 +40,6 @@ public class LightCoverageManager : MonoBehaviour
             lightPercentages[i] = activeSource.lightPercent;
         }
         playerLightLevel = lightPercentages.Max();
-        Debug.Log("The player's light level is " + playerLightLevel);
+        //Debug.Log("The player's light level is " + playerLightLevel);
     }
 }

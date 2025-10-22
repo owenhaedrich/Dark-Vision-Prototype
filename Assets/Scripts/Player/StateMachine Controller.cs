@@ -13,7 +13,10 @@ public class StateMachineController : MonoBehaviour
         //gets information from the folling scripts 
         lightLevel = GetComponent<LightCoverageManager>();
         lightStates = GetComponent<StateMachineStates>();
-
+        if (lightLevel == null)
+            Debug.LogError("LightCoverageManager not found");
+        else
+            Debug.Log("found LightCoverageManager");
 
         //starts the game in a default state
         changeState(new ExitLightState(this));
@@ -47,29 +50,31 @@ public class StateMachineController : MonoBehaviour
         if (lightLevel != null)
         {
             float lightPercent = lightLevel.playerLightLevel;
-            if (lightPercent <= 3)
+
+            Debug.Log($"Light %: {lightPercent} | Current State: {currentState?.GetType().Name}");
+            if (lightPercent >= 100)
             {
-                changeState(new ExitLightState(this));
-            }
-            else if (lightPercent >= 5)
-            {
-            changeState(new EnterLightState(this));
-            }
-            else if (lightPercent >= 25)
-            {
-            changeState(new QuarterInState(this));
-            }
-            else if (lightPercent >= 50)
-            {
-                changeState(new HalfInState(this));
+                changeState(new AllInState(this));
             }
             else if (lightPercent >= 75)
             {
                 changeState(new ThreeQuarterInState(this));
             }
-            else if (lightPercent >= 100)
+            else if (lightPercent >= 50)
             {
-                changeState(new AllInState(this));
+                changeState(new HalfInState(this));
+            }
+            else if (lightPercent >= 25)
+            {
+                changeState(new QuarterInState(this));
+            }
+            else if (lightPercent >= 5)
+            {
+                changeState(new EnterLightState(this));
+            }
+            else
+            {
+                changeState(new ExitLightState(this));
             }
         }
     }
