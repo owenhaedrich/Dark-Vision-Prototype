@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class LightRaycast : MonoBehaviour
     [SerializeField] GameObject lightPoint;
     private bool withinRange = false;
     [SerializeField] private float distancePercent;
+    [SerializeField] public float lightPercent;
     LayerMask layerMask;
 
 
@@ -24,11 +26,17 @@ public class LightRaycast : MonoBehaviour
             Debug.DrawRay(lightPoint.transform.position, dirToPlayer * lightRadius, Color.green);
             withinRange = true;
             distancePercent = (hit.distance / lightRadius) * 100;
+            lightPercent = 100 - distancePercent;
+
+
         }
         else
         {
             Debug.DrawRay(lightPoint.transform.position, dirToPlayer * lightRadius, Color.red);
             withinRange = false;
+            distancePercent = 100;
+            lightPercent = 0;
+
         }
     }
 }
