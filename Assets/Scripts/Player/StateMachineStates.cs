@@ -90,7 +90,7 @@ public class QuarterInState : IState
     }
     public void ExitState()
     {
-        Debug.Log("Exiting 255 light State");
+        Debug.Log("Exiting 25% light State");
     }
 }
 public class HalfInState : IState
