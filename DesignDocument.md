@@ -16,6 +16,7 @@ Many horror and stealth games feature light based mechanics for sneaking around 
 We want to evaluate the player's response to intense transition between light and dark. We are attempting to simulate the experience of a creature whose eye cannot withstand the light, because we believe this could be the core mechanic in an innovative stealth game.
 
 Objective Statement Question: *Does the player find the blinding light fearful and the returning darkness comforting?*
+
 How does the transition between light and dark affect the player? Does entering the blinding light cause fear? Does returning to the darkness trigger comfort?
 
 ## Gameplay Overview
