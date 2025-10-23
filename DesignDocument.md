@@ -10,7 +10,7 @@
 Eyes adjusted for the dark is a double-edged sword! Can you use the dark to your advantage and survive being blinded by the light? 
 
 ## Design Rationale
-Many horror and stealth games feature light based mechanics for sneaking around or not getting caught. However there are not any punishments beside the risk of capture for entering light. Can an overbearing negative scare players out of the dark and make them feel comfortable treading through the darkness?
+Many horror and stealth games feature light based mechanics for sneaking around or not getting caught. However there are not any punishments beside the risk of capture for entering light. Can an overbearing negative scare players out of the light and make them feel comfortable treading through the darkness?
 
 ## Objective
 We want to evaluate the player's response to intense transition between light and dark. We are attempting to simulate the experience of a creature whose eye cannot withstand the light, because we believe this could be the core mechanic in an innovative stealth game.
